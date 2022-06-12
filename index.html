@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Zemola</title>
     <style type="text/css">
-		
+
         body{
 				margin:0;
 				padding:0;
 				font-family: Sans-Serif;
 				line-height: 1.5em;
-                background-color: black;      
+                background-color: black;       
 			}
 			
 			main {
@@ -22,32 +22,18 @@
 				width: 100%;
 			}
 			
-			#nav {
-				float: left;
-				width: 230px;
-				margin-left: -100%;
-				padding-bottom: 10010px;
-				margin-bottom: -10000px;
-				background: gray;
-			}
-			
 			#wrapper {
 				overflow: hidden;
 			}
 			
-			#content {
-				margin-left: 230px; /* Same as 'nav' width */  
-			}
+			#content { 
+                padding-right: 30px;
+                padding-left: 30px;
+            }
 			
-			.innertube{
-				margin: 15px; /* Padding for content */
-				margin-top: 0;
+			.main_text{
+				margin-top: 30px;
                 color: white;
-			}
-
-            .left_colum{
-				margin: 15px; /* Padding for content */
-				margin-top: 0;    
 			}
 			
 			p {
@@ -73,22 +59,82 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                border-radius: 50%;
-                padding-top: 20px;   
+                border-radius: 50%;     
             }
+
             figcaption{
                 max-width: 425px;
                 margin: auto;
-            }   
+            }  
+           
+            .sidenav {
+                 height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: white;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 30px;
+            }
+
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            @media screen and (max-height: 450px) {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+            }
     </style>
-</head>  
-   
+
 <body>
-    <div id="wrapper">
-    
+    <div id="wrapper"> 
         <main>
             <div id="content">
-                <div class="innertube">
+                <div class="main_text">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="https://www.linkedin.com/in/david-zemola-564870232/">Linkedin</a>
+                        <a href="https://github.com/dzemola">GitHub</a>
+                        <a href="#About">About</a>
+                        <a href="#Education">Education</a>
+                        <a href="#Certificates">Certificates</a>
+                        <a href="#Recruiter">Recruiter's Link</a>
+                    </div>
+                      
+                      
+                      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Links</span>
+                      
+                      <script>
+                      function openNav() {
+                        document.getElementById("mySidenav").style.width = "250px";
+                      }
+                      
+                      function closeNav() {
+                        document.getElementById("mySidenav").style.width = "0";
+                      }
+                      </script>
+                    
                    <figure>
                     <img src="pic.jpg" alt= "Picture of David Zemola"
                     width = "300"
@@ -133,21 +179,7 @@
                     <br>   
                 </div>
             </div>
-        </main>     
-        <nav id="nav">
-            <div class="left_colum">
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/david-zemola-564870232/">Linkedin</a></li>
-                    <li><a href="https://github.com/dzemola">GitHub</a></li>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Education">Education</a></li>
-                    <li><a href="#Certificates">Certificates</a></li>
-                    <li><a href="#Recruiter">Recruiter's Link</a></li>
-                    
-                </ul>
-            </div>
-        </nav>
+        </main>        
     </div>
 </body>
 </html>
